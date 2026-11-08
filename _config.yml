@@ -95,7 +95,7 @@ al_folio:
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false # footer is hidden (see _includes/footer.liquid)
 search_enabled: true
 socials_in_search: true
 posts_in_search: true
