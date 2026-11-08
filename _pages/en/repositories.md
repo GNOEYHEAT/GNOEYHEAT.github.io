@@ -5,6 +5,7 @@ title: repositories
 lang: en
 ref: repositories
 description: Code and competition solutions on GitHub.
+published: false # hidden for now; delete this line to bring the page back
 nav: true
 nav_order: 3
 ---

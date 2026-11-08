@@ -5,6 +5,7 @@ title: 저장소
 lang: ko
 ref: repositories
 description: GitHub에 공개한 코드와 경진대회 솔루션입니다.
+published: false # hidden for now; delete this line to bring the page back
 nav: true
 nav_order: 3
 ---
