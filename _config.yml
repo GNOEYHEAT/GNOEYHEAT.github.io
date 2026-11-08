@@ -223,6 +223,7 @@ exclude:
   - al-folio-upgrade-report.md
   - bin/
   - CLAUDE.md
+  - cv_pdf/
   - Dockerfile
   - docker-compose.yml
   - docker-compose-slim.yml

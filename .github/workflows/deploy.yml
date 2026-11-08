@@ -15,6 +15,9 @@ on:
       - "**.yml"
       - "Gemfile"
       - "Gemfile.lock"
+      - "_plugins/**"
+      - "cv_pdf/**"
+      - "bin/build_cv_pdf.py"
       - "!.github/workflows/axe.yml"
       - "!.github/workflows/broken-links.yml"
       - "!.github/workflows/deploy-docker-tag.yml"
@@ -42,6 +45,9 @@ on:
       - "**.yml"
       - "Gemfile"
       - "Gemfile.lock"
+      - "_plugins/**"
+      - "cv_pdf/**"
+      - "bin/build_cv_pdf.py"
       - "!.github/workflows/axe.yml"
       - "!.github/workflows/broken-links.yml"
       - "!.github/workflows/deploy-docker-tag.yml"
@@ -88,6 +94,11 @@ jobs:
           cache: "npm"
       - name: Install JS deps 📦
         run: npm ci
+      - name: Build CV PDFs 📄
+        run: |
+          sudo apt-get update && sudo apt-get install -y fonts-noto-cjk
+          pip3 install typst==0.15.2 pyyaml
+          python3 bin/build_cv_pdf.py
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@dffe9a5223d84653c13374032382f6bb5de8e5ef # v0.17.0
         with:

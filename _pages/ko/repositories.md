@@ -1,8 +1,10 @@
 ---
 layout: page
-permalink: /repositories/
-title: repositories
-description: Code and competition solutions on GitHub.
+permalink: /ko/repositories/
+title: 저장소
+lang: ko
+ref: repositories
+description: GitHub에 공개한 코드와 경진대회 솔루션입니다.
 nav: true
 nav_order: 3
 ---

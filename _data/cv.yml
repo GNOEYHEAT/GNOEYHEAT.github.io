@@ -1,185 +1,330 @@
-# RenderCV-style CV data rendered by the al_folio_cv plugin on /cv/.
+# =============================================================================
+# CV data: the single source for
+#   - the CV pages            /cv/  (English)   and  /ko/cv/  (Korean)
+#   - the publications pages  (domestic presentations and patents sections)
+#   - the downloadable PDFs   assets/pdf/cv_taehyeong_kim_en.pdf / _ko.pdf
+#     (built automatically by bin/build_cv_pdf.py on every deploy)
+#
+# International papers live in _bibliography/papers.bib, not here.
 # Lecture history is intentionally NOT included in this public site.
-cv:
-  name: Taehyeong Kim (김태형)
-  label: Senior Engineer, Samsung SDS / Ph.D. in Industrial and Management Engineering
+#
+# Writing values
+#   - A value is either plain text (shown as-is in both languages) or
+#     {en: ..., ko: ...} when the two languages differ.
+#   - Dates are "YYYY-MM" (quote them). `end: present` shows "Present / 현재";
+#     `end: open` shows an open range ("Sep. 2020 –").
+# =============================================================================
+
+name: { en: Taehyeong Kim, ko: 김태형 }
+name_alt: { en: 김태형, ko: Taehyeong Kim }
+headline:
+  en: Senior Engineer, Samsung SDS · Ph.D. in Industrial and Management Engineering, Korea University
+  ko: 삼성SDS Senior Engineer · 고려대학교 산업경영공학 박사
+
+# Names that are set in bold in author lists (web and PDF).
+self_names: [김태형, Taehyeong Kim, Tae-Hyeong Kim]
+
+contact:
   email: taehyeong93@korea.ac.kr
-  location: Seoul, Korea
+  location: { en: "Seoul, Korea", ko: 대한민국 서울 }
+  website: gnoeyheat.github.io
+  github: GNOEYHEAT
+  linkedin: gnoeyheat
+  scholar: 2jZjFFQAAAAJ
 
-  social_networks:
-    - network: GitHub
-      username: GNOEYHEAT
+# -----------------------------------------------------------------------------
+education:
+  - school: { en: Korea University, ko: 고려대학교 }
+    department: { en: School of Industrial Management Engineering, ko: 산업경영공학과 }
+    degree: { en: Ph.D. in Industrial and Management Engineering, ko: 공학박사 (산업경영공학) }
+    location: { en: "Seoul, Korea", ko: 서울 }
+    start: "2019-09"
+    end: "2025-08"
+    details:
+      - en: "Thesis: Multimodal Representation Learning and System Development Based on Large-Scale Vision-Language Models for Visual Reasoning"
+        ko: "학위논문: Multimodal Representation Learning and System Development Based on Large-Scale Vision-Language Models for Visual Reasoning"
+      - en: "Advisor: Prof. Sung Won Han, Artificial Intelligence & Data Analytics Lab"
+        ko: "지도교수: 한성원 교수 (Artificial Intelligence & Data Analytics Lab)"
 
-  sections:
-    Education:
-      - institution: Korea University, School of Industrial Management Engineering
-        location: Seoul, Korea
-        studyType: Ph.D. in Industrial and Management Engineering
-        start_date: 2019-09
-        end_date: 2025-08
-        highlights:
-          - "Thesis: Multimodal Representation Learning and System Development Based on Large-Scale Vision-Language Models for Visual Reasoning"
-          - "Advisor: Prof. Sung Won Han, Artificial Intelligence & Data Analytics Lab"
+  - school: { en: Korea University, ko: 고려대학교 }
+    department: { en: Department of Information Statistics, ko: 정보통계학과 }
+    degree: { en: B.S. in Information Statistics, ko: 이학사 (정보통계학) }
+    location: { en: "Sejong, Korea", ko: 세종 }
+    start: "2012-03"
+    end: "2019-08"
 
-      - institution: Korea University, Department of Information Statistics
-        location: Sejong, Korea
-        studyType: B.S. in Information Statistics
-        start_date: 2012-03
-        end_date: 2019-08
+# -----------------------------------------------------------------------------
+experience:
+  - organization: { en: Samsung SDS, ko: 삼성SDS }
+    position: Senior Engineer
+    location: { en: Korea, ko: 대한민국 }
+    start: "2025-09"
+    end: present
 
-    Experience:
-      - company: Samsung SDS
-        position: Senior Engineer
-        location: Korea
-        start_date: 2025-09
+  - organization: { en: "Artificial Intelligence & Data Analytics Lab, Korea University", ko: "고려대학교 Artificial Intelligence & Data Analytics Lab" }
+    position: { en: "Research Student, Industrial and Management Engineering", ko: "연구원 (산업경영공학과 대학원)" }
+    location: { en: "Seoul, Korea", ko: 서울 }
+    start: "2019-09"
+    end: "2025-08"
 
-      - company: Artificial Intelligence & Data Analytics Lab, Korea University
-        position: Research Student, Industrial and Management Engineering
-        location: Seoul, Korea
-        start_date: 2019-09
-        end_date: 2025-08
+# -----------------------------------------------------------------------------
+research_interests:
+  - { en: Large Vision-Language Models, ko: 대규모 시각-언어 모델 }
+  - { en: Multimodal Large Language Models, ko: 멀티모달 대규모 언어 모델 }
+  - { en: Multimodal Reasoning, ko: 멀티모달 추론 }
+  - { en: Time Series Analysis, ko: 시계열 분석 }
+  - { en: Anomaly Detection, ko: 이상 탐지 }
 
-    Academic Interests:
-      - name: Research
-        keywords:
-          - Large Vision-Language Models
-          - Multimodal Large Language Models
-          - Multimodal Reasoning
-          - Time Series Analysis
-          - Anomaly Detection
+# -----------------------------------------------------------------------------
+domestic_presentations:
+  - authors: [최준혁, 김태형, 한성원]
+    title: 학습 가능한 가중치 임베딩을 활용한 RAG 기반 건설 사고 대응책 생성 프레임워크
+    venue: 대한산업공학회
+    location: { en: Seogwipo, ko: 서귀포 }
+    date: "2025-06"
+    type: { en: Poster, ko: 포스터 }
+  - authors: [김태형, 정현기, 한성원]
+    title: 시각적 함의를 위한 유사성 인식 시각-언어 표현 학습
+    venue: 한국데이터마이닝학회
+    location: { en: Gyeongju, ko: 경주 }
+    date: "2024-11"
+    type: { en: Poster, ko: 포스터 }
+  - authors: [정현기, 김태형, 한성원]
+    title: 지식 기반의 시각적 질문 응답을 위한 프롬프트 기반 지식통합 학습
+    venue: 한국데이터마이닝학회
+    location: { en: Gyeongju, ko: 경주 }
+    date: "2024-11"
+    type: { en: Poster, ko: 포스터 }
+  - authors: [김태형, 한성원]
+    title: Large Language Model 평가자를 사용한 코드 유사성 판단
+    venue: 한국데이터마이닝학회
+    location: { en: Seoul, ko: 서울 }
+    date: "2024-05"
+    type: { en: Oral, ko: 구두 }
+  - authors: [김태형, 강지수, 함유진, 한성원]
+    title: 위성영상 기반 일사량을 활용한 전력거래량 스태킹 앙상블 예측 모형 개발
+    venue: 한국태양에너지학회
+    location: { en: Jeju, ko: 제주 }
+    date: "2022-10"
+    type: { en: Oral, ko: 구두 }
+  - authors: [김태형, 허준호, 박세홍, 한성원]
+    title: 기침 소리 데이터를 이용한 멀티모달 기반의 COVID-19 검출
+    venue: 한국데이터마이닝학회
+    location: { en: Busan, ko: 부산 }
+    date: "2022-08"
+    type: { en: Oral, ko: 구두 }
+  - authors: [박현준, 김태형, 김영석, 민진홍, 성기우, 한성원]
+    title: 자동차 신뢰성 예측을 위한 상호보완적 신뢰성 관점의 트랜스포머 기반 예측 모델 개발
+    venue: 대한산업공학회
+    location: { en: Jeju, ko: 제주 }
+    date: "2022-06"
+    type: { en: Poster, ko: 포스터 }
+  - authors: [김태형, 박원준, 성기우, 한성원]
+    title: 클레임 데이터를 활용한 준지도 학습 기반 자동차 부품 고장 예측
+    venue: 한국신뢰성학회
+    location: { en: Jeju, ko: 제주 }
+    date: "2021-06"
+    type: { en: Oral, ko: 구두 }
+  - authors: [김태형, 임재성, 한성원]
+    title: 디지털 워터마크를 이용한 위·변조 사진 Out-of-Distribution 탐지
+    venue: 대한산업공학회
+    location: { en: Seogwipo, ko: 서귀포 }
+    date: "2021-06"
+    type: { en: Oral, ko: 구두 }
+  - authors: [김태형, 강민지, 주형준, 한성원]
+    title: BioWordVec을 활용한 유사도 기반의 철자 오류 교정
+    venue: 한국데이터마이닝학회
+    location: { en: Seoul, ko: 서울 }
+    date: "2020-11"
+    type: { en: Oral, ko: 구두 }
+  - authors: [이준걸, 박성훈, 김태형, 김창기, 한성원]
+    title: LSTM기반 딥러닝을 이용한 일사량 이미지 생성
+    venue: 한국데이터마이닝학회
+    location: { en: Seoul, ko: 서울 }
+    date: "2020-11"
+    type: { en: Oral, ko: 구두 }
 
-    Projects:
-      - name: 기후 데이터 기반의 환경 시험 규격 설정 프로세스 개발
-        summary: (주)현대엔지비
-        start_date: 2024-09
-        end_date: 2025-02
+# -----------------------------------------------------------------------------
+# status: application (출원) or registration (등록)
+patents:
+  - authors: [류도훈, 김범준, 김태형, 정현기, 함지율, 김용성]
+    title: 시각-언어모델 기반 영상 의미 분할 및 요약 정보 저장 방법 및 장치
+    status: application
+    number: 10-2025-0065303
+  - authors: [주형준, 한성원, 손장욱, 김태형, 김종호, 박수완, 장준호, 이정문, 강민지]
+    title: 의학용어 오탈자 수정 장치 및 방법
+    status: registration
+    number: 10-2757569
+  - authors: [임재성, 김태형]
+    title: 위변조 이미지 판정 모델의 학습 방법 및 그 장치
+    status: registration
+    number: 10-2744049
+  - authors: [김태형, 임재성, 김성원]
+    title: 노이즈 부가를 이용한 위변조 이미지 판정 방법 및 그 장치
+    status: registration
+    number: 10-2592718
+  - authors: [손장욱, 한성원, 주형준, 김태형, 김종호, 강민지, 장준호, 김종훈]
+    title: 온톨로지 데이터베이스 기반의 룰 기반 알고리즘을 이용한 세균배양검사결과보고서 정제 시스템
+    status: registration
+    number: 10-2512095
 
-      - name: 온디바이스 경량 언어모델 기반의 스마트홈 AI 비서 개발
-        summary: 한국전자기술연구원
-        start_date: 2024-06
-        end_date: 2024-10
+# -----------------------------------------------------------------------------
+projects:
+  - title: 기후 데이터 기반의 환경 시험 규격 설정 프로세스 개발
+    sponsor: (주)현대엔지비
+    start: "2024-09"
+    end: "2025-02"
+  - title: 온디바이스 경량 언어모델 기반의 스마트홈 AI 비서 개발
+    sponsor: 한국전자기술연구원
+    start: "2024-06"
+    end: "2024-10"
+  - title: 대규모 Multimodal AI 모델을 이용한 영상 검색 시스템
+    sponsor: 에스케이텔레콤 주식회사
+    start: "2024-05"
+    end: "2024-10"
+  - title: AI를 활용한 상품정보 자동 생성 알고리즘 연구
+    sponsor: (주)프림로즈힐파트너스
+    start: "2022-10"
+    end: "2022-12"
+  - title: 양자 기계학습 시뮬레이터
+    sponsor: 한국연구재단
+    start: "2020-07"
+    end: "2022-02"
+  - title: 클레임데이터를 활용한 내구열화 부품 발췌 및 미래 고장 패턴 예측 기술 개발
+    sponsor: (주)현대엔지비
+    start: "2020-05"
+    end: "2021-08"
+  - title: 클레임 데이터 기반 고장발생예측 기술개발
+    sponsor: (주)현대엔지비
+    start: "2019-08"
+    end: "2020-02"
+  - title: 감염성질환 데이터의 CDM 확장모델 개발 및 활용을 위한 Tool 개발
+    sponsor: 한국보건산업진흥원
+    start: "2019-04"
+    end: "2021-12"
+  - title: 천리안 위성영상 기반 구름이동벡터 생산 알고리즘 구축 용역
+    sponsor: 한국에너지기술연구원
+    start: "2019-04"
+    end: "2019-07"
 
-      - name: 대규모 Multimodal AI 모델을 이용한 영상 검색 시스템
-        summary: 에스케이텔레콤 주식회사
-        start_date: 2024-05
-        end_date: 2024-10
+# -----------------------------------------------------------------------------
+awards:
+  - title: 2025 전력사용량 예측 AI 경진대회
+    prize: { en: 3rd place, ko: 3위 }
+    awarder: 한국에너지공단
+    date: "2025-09"
+  - title: "2025 Bias-A-Thon: Bias 대응 챌린지 (Track 2)"
+    prize: 최우수상
+    awarder: 성균관대학교
+    date: "2025-06"
+  - title: "건설공사 사고 예방 및 대응책 생성: 한솔데코 시즌3 AI 경진대회"
+    prize: { en: 1st place, ko: 1위 }
+    awarder: 한솔데코
+    date: "2025-04"
+  - title: FSI AIxData Challenge 2024
+    prize: KB국민은행장상
+    awarder: 금융보안원
+    date: "2024-11"
+  - title: 한국전자기술연구원 AI 융합·응용기술 아이디어 경진대회
+    prize: 장려상
+    awarder: 한국전자기술연구원
+    date: "2024-10"
+  - title: 웹 기사 추천 AI 경진대회
+    prize: { en: 4th place, ko: 4위 }
+    awarder: 데이콘
+    date: "2024-07"
+  - title: 웹 광고 클릭률 예측 AI 경진대회
+    prize: { en: 5th place, ko: 5위 }
+    awarder: 데이콘
+    date: "2024-06"
+  - title: 코드 유사성 판단 시즌2 AI 경진대회
+    prize: { en: 1st place, ko: 1위 }
+    awarder: 데이콘
+    date: "2024-04"
+  - title: 반도체 소자 이상 탐지 AI 경진대회
+    prize: { en: 1st place, ko: 1위 }
+    awarder: 데이콘
+    date: "2024-03"
+  - title: HD현대 AI Challenge
+    prize: 우수상
+    awarder: HD한국조선해양 AI Center
+    date: "2023-11"
+  - title: AI vs Human 텍스트 판별 해커톤
+    prize: { en: 1st place, ko: 1위 }
+    awarder: 데이콘
+    date: "2023-11"
+  - title: "2023 Samsung AI Challenge: Camera-Invariant Domain Adaptation"
+    prize: 장려상
+    awarder: 삼성전자 SAIT
+    date: "2023-10"
+  - title: 이미지 기반 질의 응답 AI 경진대회
+    prize: { en: 3rd place, ko: 3위 }
+    awarder: 데이콘
+    date: "2023-08"
+  - title: 법원 판결 예측 AI 경진대회
+    prize: { en: 4th place, ko: 4위 }
+    awarder: 데이콘
+    date: "2023-07"
+  - title: 음향 데이터 COVID-19 검출 AI 경진대회
+    prize: { en: 3rd place, ko: 3위 }
+    awarder: 데이콘
+    date: "2022-07"
+  - title: 2021년 산업제어시스템 보안위협 탐지 AI 경진대회 (HAICon 2021)
+    prize: 입선
+    awarder: 국가정보원, 국가보안기술연구소
+    date: "2021-11"
+  - title: SAS 논문경진대회
+    prize: 우수 논문상
+    awarder: 한국쌔스소프트웨어(유), 한국데이터마이닝학회
+    date: "2020-11"
+  - title: FactoryHack Korea 2020
+    prize: 대상
+    awarder: 산업통상자원부, 한국전자부품연구원(KETI)
+    date: "2020-01"
+  - title: KU-AI 4.0 바이오 의료 빅데이터 분석 및 활용 과정
+    prize: 최우수상
+    awarder: 고용노동부, 고려대학교 대학교육개발원
+    date: "2018-11"
 
-      - name: AI를 활용한 상품정보 자동 생성 알고리즘 연구
-        summary: (주)프림로즈힐파트너스
-        start_date: 2022-10
-        end_date: 2022-12
+# -----------------------------------------------------------------------------
+competitions:
+  - en: "DACON Champion tier: 15 awards; top 1% ×6, top 4% ×14, top 10% ×7"
+    ko: "DACON 경진대회 Champion 티어: 수상 15회, 상위 1% 6회, 상위 4% 14회, 상위 10% 7회"
 
-      - name: 양자 기계학습 시뮬레이터
-        summary: 한국연구재단
-        start_date: 2020-07
-        end_date: 2022-02
+# -----------------------------------------------------------------------------
+fellowships:
+  - title: SKT AI Fellowship 6기
+    organization: SK텔레콤
+    start: "2024-05"
+    end: "2024-10"
+  - title: LG Aimers / Data Intelligence 3기
+    organization: LG AI연구원
+    start: "2023-07"
+    end: "2023-08"
+  - title: LG Aimers / Data Intelligence 1기
+    organization: LG AI연구원
+    start: "2022-07"
+    end: "2022-08"
+  - title: 4단계 BK21 빅데이터 애널리틱스 기반 문제 정의형 인재 양성
+    organization: 교육부
+    start: "2020-09"
+    end: open
+  - title: 산업인공지능 전문인력 양성
+    organization: 한국산업기술진흥원
+    start: "2019-09"
+    end: "2020-03"
 
-      - name: 클레임데이터를 활용한 내구열화 부품 발췌 및 미래 고장 패턴 예측 기술 개발
-        summary: (주)현대엔지비
-        start_date: 2020-05
-        end_date: 2021-08
-
-      - name: 클레임 데이터 기반 고장발생예측 기술개발
-        summary: (주)현대엔지비
-        start_date: 2019-08
-        end_date: 2020-02
-
-      - name: 감염성질환 데이터의 CDM 확장모델 개발 및 활용을 위한 Tool 개발
-        summary: 한국보건산업진흥원
-        start_date: 2019-04
-        end_date: 2021-12
-
-      - name: 천리안 위성영상 기반 구름이동벡터 생산 알고리즘 구축 용역
-        summary: 한국에너지기술연구원
-        start_date: 2019-04
-        end_date: 2019-07
-
-    Patents:
-      - bullet: "시각-언어모델 기반 영상 의미 분할 및 요약 정보 저장 방법 및 장치 (KR Application No. 10-2025-0065303)"
-      - bullet: "의학용어 오탈자 수정 장치 및 방법 (KR Registration No. 10-2757569)"
-      - bullet: "위변조 이미지 판정 모델의 학습 방법 및 그 장치 (KR Registration No. 10-2744049)"
-      - bullet: "노이즈 부가를 이용한 위변조 이미지 판정 방법 및 그 장치 (KR Registration No. 10-2592718)"
-      - bullet: "온톨로지 데이터베이스 기반의 룰 기반 알고리즘을 이용한 세균배양검사결과보고서 정제 시스템 (KR Registration No. 10-2512095)"
-
-    Honors and Awards:
-      - title: 2025 전력사용량 예측 AI 경진대회, 3rd place
-        awarder: 한국에너지공단
-        date: 2025-09
-      - title: "2025 Bias-A-Thon: Bias 대응 챌린지 (Track 2), 최우수상"
-        awarder: 성균관대학교
-        date: 2025-06
-      - title: "건설공사 사고 예방 및 대응책 생성: 한솔데코 시즌3 AI 경진대회, 1st place"
-        awarder: 한솔데코
-        date: 2025-04
-      - title: FSI AIxData Challenge 2024, KB국민은행장상
-        awarder: 금융보안원
-        date: 2024-11
-      - title: 한국전자기술연구원 AI 융합·응용기술 아이디어 경진대회, 장려상
-        awarder: 한국전자기술연구원
-        date: 2024-10
-      - title: 웹 기사 추천 AI 경진대회, 4th place
-        awarder: 데이콘
-        date: 2024-07
-      - title: 웹 광고 클릭률 예측 AI 경진대회, 5th place
-        awarder: 데이콘
-        date: 2024-06
-      - title: 코드 유사성 판단 시즌2 AI 경진대회, 1st place
-        awarder: 데이콘
-        date: 2024-04
-      - title: 반도체 소자 이상 탐지 AI 경진대회, 1st place
-        awarder: 데이콘
-        date: 2024-03
-      - title: HD현대 AI Challenge, 우수상
-        awarder: HD한국조선해양 AI Center
-        date: 2023-11
-      - title: AI vs Human 텍스트 판별 해커톤, 1st place
-        awarder: 데이콘
-        date: 2023-11
-      - title: "2023 Samsung AI Challenge: Camera-Invariant Domain Adaptation, 장려상"
-        awarder: 삼성전자 SAIT
-        date: 2023-10
-      - title: 이미지 기반 질의 응답 AI 경진대회, 3rd place
-        awarder: 데이콘
-        date: 2023-08
-      - title: 법원 판결 예측 AI 경진대회, 4th place
-        awarder: 데이콘
-        date: 2023-07
-      - title: 음향 데이터 COVID-19 검출 AI 경진대회, 3rd place
-        awarder: 데이콘
-        date: 2022-07
-      - title: 2021년 산업제어시스템 보안위협 탐지 AI 경진대회 (HAICon 2021), 입선
-        awarder: 국가정보원, 국가보안기술연구소
-        date: 2021-11
-      - title: SAS 논문경진대회, 우수 논문상
-        awarder: 한국쌔스소프트웨어(유), 한국데이터마이닝학회
-        date: 2020-11
-      - title: FactoryHack Korea 2020, 대상
-        awarder: 산업통상자원부, 한국전자부품연구원(KETI)
-        date: 2020-01
-      - title: KU-AI 4.0 바이오 의료 빅데이터 분석 및 활용 과정, 최우수상
-        awarder: 고용노동부, 고려대학교 대학교육개발원
-        date: 2018-11
-
-    AI Competitions:
-      - bullet: "DACON Competition **Champion** tier: 수상 15회, 상위 1% 6회, 상위 4% 14회, 상위 10% 7회"
-
-    Fellowships and Programs:
-      - bullet: "SKT AI Fellowship 6기, SK텔레콤 (May 2024 – Oct. 2024)"
-      - bullet: "LG Aimers / Data Intelligence 3기, LG AI연구원 (Jul. 2023 – Aug. 2023)"
-      - bullet: "LG Aimers / Data Intelligence 1기, LG AI연구원 (Jul. 2022 – Aug. 2022)"
-      - bullet: "4단계 BK21 빅데이터 애널리틱스 기반 문제 정의형 인재 양성, 교육부 (from Sep. 2020)"
-      - bullet: "산업인공지능 전문인력 양성, 한국산업기술진흥원 (Sep. 2019 – Mar. 2020)"
-
-    Certificates:
-      - name: AICE Associate
-        date: 2022-11
-      - name: AICE Basic
-        date: 2022-11
-      - name: 빅데이터 분석기사
-        date: 2021-07
-      - name: 데이터분석 준전문가 (ADsP)
-        date: 2018-12
-      - name: 정보처리기사
-        date: 2018-11
-      - name: 사회조사분석사 2급
-        date: 2017-08
+# -----------------------------------------------------------------------------
+certificates:
+  - title: AICE Associate
+    date: "2022-11"
+  - title: AICE Basic
+    date: "2022-11"
+  - title: 빅데이터 분석기사
+    date: "2021-07"
+  - title: 데이터분석 준전문가 (ADsP)
+    date: "2018-12"
+  - title: 정보처리기사
+    date: "2018-11"
+  - title: 사회조사분석사 2급
+    date: "2017-08"

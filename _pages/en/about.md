@@ -2,11 +2,16 @@
 layout: about
 title: about
 permalink: /
+lang: en
+ref: about
+nav: true
+nav_order: 0
+publications_url: /publications/
 subtitle: Senior Engineer at <a href='https://www.samsungsds.com'>Samsung SDS</a>. Ph.D. in Industrial and Management Engineering, Korea University.
 
 profile:
   align: right
-  image: prof_pic.jpg # replace assets/img/prof_pic.jpg with your own photo
+  image: prof_pic.jpg
   image_circular: false
   more_info: >
     <p>Seoul, Korea</p>

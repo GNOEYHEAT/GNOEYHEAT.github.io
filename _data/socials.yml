@@ -1,8 +1,7 @@
-# Social links shown on the about page, in this order.
+# Social links shown on the about pages, in this order.
 # Keys follow the jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
 email: taehyeong93@korea.ac.kr
+scholar_userid: 2jZjFFQAAAAJ # Google Scholar user ID
+linkedin_username: gnoeyheat # the part after linkedin.com/in/
 github_username: GNOEYHEAT
-# linkedin_username: your-linkedin-id   # the part after linkedin.com/in/
-# scholar_userid: XXXXXXXXXXXX          # Google Scholar user ID
-# orcid_id: 0000-0000-0000-0000
-# cv_pdf: /assets/pdf/cv_taehyeong_kim.pdf  # public CV only; do not upload the version with the lecture list
+cv_pdf: /assets/pdf/cv_taehyeong_kim_en.pdf # built automatically from _data/cv.yml on deploy

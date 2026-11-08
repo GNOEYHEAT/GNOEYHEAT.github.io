@@ -1,0 +1,108 @@
+{%- comment -%}
+  Site override of al_folio_core's header.liquid (al_folio_core 1.0.15).
+  Changes from the gem version:
+    - the full name is bold (not only the first name), in the page's language;
+    - the menu lists only pages in the current language (front matter `lang`);
+    - a language switch links to the same page in the other language
+      (pages that are translations of each other share the front matter `ref`).
+{%- endcomment -%}
+{% assign lang = page.lang | default: site.lang %}
+{% assign t = site.data.i18n[lang] %}
+{% if lang == 'ko' %}
+  {% assign other_lang = 'en' %}
+  {% assign home_url = '/ko/' %}
+  {% assign other_home_url = '/' %}
+{% else %}
+  {% assign other_lang = 'ko' %}
+  {% assign home_url = '/' %}
+  {% assign other_home_url = '/ko/' %}
+{% endif %}
+{% assign switch_url = other_home_url %}
+{% if page.ref %}
+  {% for p in site.pages %}
+    {% if p.ref == page.ref and p.lang == other_lang %}
+      {% assign switch_url = p.url %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+<header>
+  <!-- Nav Bar -->
+  <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}" role="navigation">
+    <div class="container">
+      {% if page.ref != 'about' %}
+        <a class="navbar-brand title" href="{{ home_url | relative_url }}">
+          <span class="font-weight-bold">{{- site.data.cv.name | loc: lang -}}</span>
+        </a>
+      {% elsif site.enable_navbar_social %}
+        <!-- Social Icons -->
+        <div class="navbar-brand social">{% social_links %}</div>
+      {% endif %}
+      <!-- Navbar Toggle -->
+      <button
+        class="navbar-toggler collapsed navbar-toggler-main"
+        type="button"
+        data-nav-toggle="navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav">
+        <ul class="navbar-nav navbar-menu-list flex-nowrap">
+          {% assign sorted_pages = site.pages | sort: 'nav_order' %}
+          {% for p in sorted_pages %}
+            {% assign p_lang = p.lang | default: site.lang %}
+            {% if p.nav and p_lang == lang %}
+              <li class="nav-item {% if page.url == p.url %}active{% endif %}">
+                <a class="nav-link" href="{{ p.url | relative_url }}">
+                  {{- p.title }}
+                  {% if page.url == p.url %}
+                    <span class="sr-only">(current)</span>
+                  {% endif %}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+          <!-- Language switch -->
+          <li class="nav-item">
+            <a class="nav-link" href="{{ switch_url | relative_url }}" hreflang="{{ other_lang }}" lang="{{ other_lang }}" title="{{ t.switch_title }}">
+              <i class="fa-solid fa-language"></i>
+              {{ t.switch_label -}}
+            </a>
+          </li>
+          {% if site.search_enabled %}
+            <!-- Search -->
+            <li class="nav-item">
+              <button id="search-toggle" type="button" title="Search" aria-label="Open search">
+                <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span>
+              </button>
+            </li>
+          {% endif %}
+          {% if site.enable_darkmode %}
+            <!-- Toogle theme mode -->
+            <li class="toggle-container">
+              <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme">
+                <i class="fa-half-sun-moon" id="light-toggle-system"></i>
+                <i class="fa-solid fa-moon" id="light-toggle-dark"></i>
+                <i class="fa-solid fa-sun" id="light-toggle-light"></i>
+              </button>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  {% if site.enable_progressbar %}
+    <!-- Scrolling Progress Bar -->
+    <progress id="progress" value="0">
+      <div class="progress-container">
+        <span class="progress-bar"></span>
+      </div>
+    </progress>
+  {% endif %}
+</header>

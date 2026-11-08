@@ -1,0 +1,29 @@
+{%- comment -%}
+  Domestic conference presentations and patents from _data/cv.yml.
+  Usage: {% include cv_extra_publications.liquid lang="en" %}
+{%- endcomment -%}
+{% assign lang = include.lang | default: site.lang %}
+{% assign t = site.data.i18n[lang] %}
+{% assign cv = site.data.cv %}
+
+<h2 id="domestic-presentations">{{ t.domestic_presentations }}</h2>
+<ol class="cv-numbered">
+  {% for item in cv.domestic_presentations %}
+    <li>
+      {{ item.authors | cv_authors }}, "{{ item.title | loc: lang }}", <em>{{ item.venue | loc: lang }}</em>,
+      {{ item.location | loc: lang }}, {{ item.date | cv_date: lang }}. ({{ item.type | loc: lang }})
+    </li>
+  {% endfor %}
+</ol>
+
+<h2 id="patents">{{ t.patents }}</h2>
+<ol class="cv-numbered">
+  {% for item in cv.patents %}
+    {% if item.status == 'application' %}
+      {% assign number_label = t.patent_application %}
+    {% else %}
+      {% assign number_label = t.patent_registration %}
+    {% endif %}
+    <li>{{ item.authors | cv_authors }}, "{{ item.title | loc: lang }}", {{ number_label }} {{ item.number }}.</li>
+  {% endfor %}
+</ol>

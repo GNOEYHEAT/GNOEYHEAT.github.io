@@ -1,0 +1,164 @@
+{%- comment -%}
+  CV page body, rendered from _data/cv.yml in the page's language.
+  Usage: {% include cv_body.liquid lang="en" %}
+  The same data is turned into the PDF by bin/build_cv_pdf.py (cv_pdf/cv.typ).
+{%- endcomment -%}
+{% assign lang = include.lang | default: site.lang %}
+{% assign t = site.data.i18n[lang] %}
+{% assign cv = site.data.cv %}
+{% assign pdf_en = '/assets/pdf/cv_taehyeong_kim_en.pdf' %}
+{% assign pdf_ko = '/assets/pdf/cv_taehyeong_kim_ko.pdf' %}
+{% if lang == 'ko' %}
+  {% assign publications_url = '/ko/publications/' | relative_url %}
+{% else %}
+  {% assign publications_url = '/publications/' | relative_url %}
+{% endif %}
+
+<style>
+  .cv-pdf-buttons { margin: 0 0 1.5rem; }
+  .cv-pdf-buttons a { margin-right: 0.5rem; margin-bottom: 0.4rem; }
+  .cv-entries { list-style: none; padding-left: 0; }
+  .cv-entries > li { display: flex; gap: 1rem; padding: 0.45rem 0; border-bottom: 1px solid var(--global-divider-color); }
+  .cv-entries > li:last-child { border-bottom: none; }
+  .cv-when { flex: 0 0 11.5rem; color: var(--global-text-color-light); font-size: 0.92rem; }
+  .cv-what { flex: 1 1 auto; min-width: 0; }
+  .cv-what ul { margin: 0.25rem 0 0; padding-left: 1.1rem; }
+  .cv-sub { color: var(--global-text-color-light); }
+  .cv-numbered li { margin-bottom: 0.35rem; }
+  @media (max-width: 576px) {
+    .cv-entries > li { flex-direction: column; gap: 0.1rem; }
+    .cv-when { flex-basis: auto; }
+  }
+</style>
+
+<div class="cv-pdf-buttons">
+  <a class="btn btn-sm z-depth-0 border" href="{{ pdf_en | relative_url }}" target="_blank" rel="noopener">
+    <i class="fa-solid fa-file-pdf"></i> {{ t.download_pdf }} ({{ t.pdf_en }})
+  </a>
+  <a class="btn btn-sm z-depth-0 border" href="{{ pdf_ko | relative_url }}" target="_blank" rel="noopener">
+    <i class="fa-solid fa-file-pdf"></i> {{ t.download_pdf }} ({{ t.pdf_ko }})
+  </a>
+</div>
+
+<h2 id="contact">{{ t.contact }}</h2>
+<ul class="cv-entries">
+  <li>
+    <div class="cv-when">{{ t.email }}</div>
+    <div class="cv-what"><a href="mailto:{{ cv.contact.email }}">{{ cv.contact.email }}</a></div>
+  </li>
+  <li>
+    <div class="cv-when">{{ t.location }}</div>
+    <div class="cv-what">{{ cv.contact.location | loc: lang }}</div>
+  </li>
+  <li>
+    <div class="cv-when">{{ t.links }}</div>
+    <div class="cv-what">
+      <a href="https://github.com/{{ cv.contact.github }}">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/{{ cv.contact.linkedin }}/">LinkedIn</a> ·
+      <a href="https://scholar.google.com/citations?user={{ cv.contact.scholar }}">Google Scholar</a>
+    </div>
+  </li>
+</ul>
+
+<h2 id="education">{{ t.education }}</h2>
+<ul class="cv-entries">
+  {% for e in cv.education %}
+    <li>
+      <div class="cv-when">{{ e.start | cv_period: e.end, lang }}</div>
+      <div class="cv-what">
+        <b>{{ e.degree | loc: lang }}</b><br>
+        <span class="cv-sub">{{ e.school | loc: lang }}, {{ e.department | loc: lang }} · {{ e.location | loc: lang }}</span>
+        {% if e.details %}
+          <ul>
+            {% for d in e.details %}<li>{{ d | loc: lang }}</li>{% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </li>
+  {% endfor %}
+</ul>
+
+<h2 id="experience">{{ t.experience }}</h2>
+<ul class="cv-entries">
+  {% for e in cv.experience %}
+    <li>
+      <div class="cv-when">{{ e.start | cv_period: e.end, lang }}</div>
+      <div class="cv-what">
+        <b>{{ e.position | loc: lang }}</b><br>
+        <span class="cv-sub">{{ e.organization | loc: lang }} · {{ e.location | loc: lang }}</span>
+      </div>
+    </li>
+  {% endfor %}
+</ul>
+
+<h2 id="research-interests">{{ t.research_interests }}</h2>
+<p>
+  {% for r in cv.research_interests %}{{ r | loc: lang }}{% unless forloop.last %} · {% endunless %}{% endfor %}
+</p>
+
+<h2 id="publications">{{ t.publications }}</h2>
+<p>{{ t.publications_note | replace: '__URL__', publications_url }}</p>
+
+<h2 id="projects">{{ t.projects }}</h2>
+<ul class="cv-entries">
+  {% for e in cv.projects %}
+    <li>
+      <div class="cv-when">{{ e.start | cv_period: e.end, lang }}</div>
+      <div class="cv-what">
+        {{ e.title | loc: lang }}<br><span class="cv-sub">{{ e.sponsor | loc: lang }}</span>
+      </div>
+    </li>
+  {% endfor %}
+</ul>
+
+<h2 id="patents">{{ t.patents }}</h2>
+<ul class="cv-entries">
+  {% for item in cv.patents %}
+    {% if item.status == 'application' %}
+      {% assign number_label = t.patent_application %}
+    {% else %}
+      {% assign number_label = t.patent_registration %}
+    {% endif %}
+    <li>
+      <div class="cv-when">{{ number_label }}<br>{{ item.number }}</div>
+      <div class="cv-what">{{ item.title | loc: lang }}<br><span class="cv-sub">{{ item.authors | cv_authors }}</span></div>
+    </li>
+  {% endfor %}
+</ul>
+
+<h2 id="awards">{{ t.awards }}</h2>
+<ul class="cv-entries">
+  {% for e in cv.awards %}
+    <li>
+      <div class="cv-when">{{ e.date | cv_date: lang }}</div>
+      <div class="cv-what">
+        {{ e.title | loc: lang }}, <b>{{ e.prize | loc: lang }}</b><br><span class="cv-sub">{{ e.awarder | loc: lang }}</span>
+      </div>
+    </li>
+  {% endfor %}
+</ul>
+
+<h2 id="competitions">{{ t.competitions }}</h2>
+<ul>
+  {% for c in cv.competitions %}<li>{{ c | loc: lang }}</li>{% endfor %}
+</ul>
+
+<h2 id="fellowships">{{ t.fellowships }}</h2>
+<ul class="cv-entries">
+  {% for e in cv.fellowships %}
+    <li>
+      <div class="cv-when">{{ e.start | cv_period: e.end, lang }}</div>
+      <div class="cv-what">{{ e.title | loc: lang }}<br><span class="cv-sub">{{ e.organization | loc: lang }}</span></div>
+    </li>
+  {% endfor %}
+</ul>
+
+<h2 id="certificates">{{ t.certificates }}</h2>
+<ul class="cv-entries">
+  {% for e in cv.certificates %}
+    <li>
+      <div class="cv-when">{{ e.date | cv_date: lang }}</div>
+      <div class="cv-what">{{ e.title | loc: lang }}</div>
+    </li>
+  {% endfor %}
+</ul>

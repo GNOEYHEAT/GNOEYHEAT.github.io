@@ -1,0 +1,60 @@
+# Interface text for the English (en) and Korean (ko) versions of the site.
+# Page titles and body text live in the pages themselves (_pages/en, _pages/ko).
+en:
+  switch_label: 한국어
+  switch_title: 한국어로 보기
+  present: Present
+  selected_publications: selected publications
+  under_review: Under Review
+  journal_and_proceedings: Journal Articles & Proceedings
+  domestic_presentations: Domestic Conference Presentations
+  patents: Patents
+  patent_application: KR Application No.
+  patent_registration: KR Registration No.
+  download_pdf: Download PDF
+  pdf_en: English
+  pdf_ko: Korean
+  contact: Contact
+  email: Email
+  location: Location
+  links: Links
+  education: Education
+  experience: Experience
+  research_interests: Research Interests
+  publications: Publications
+  publications_note: "The full list of papers is on the <a href=\"__URL__\">publications</a> page."
+  projects: Industry–Academic Projects
+  awards: Honors and Awards
+  competitions: AI Competitions
+  fellowships: Fellowships and Programs
+  certificates: Certificates
+  equal_contribution: "* Equal contribution"
+ko:
+  switch_label: English
+  switch_title: View in English
+  present: 현재
+  selected_publications: 대표 논문
+  under_review: 심사 중
+  journal_and_proceedings: 학술지 및 국제 학술대회 논문
+  domestic_presentations: 국내 학술대회 발표
+  patents: 특허
+  patent_application: 출원번호
+  patent_registration: 등록번호
+  download_pdf: PDF 다운로드
+  pdf_en: 영문
+  pdf_ko: 국문
+  contact: 연락처
+  email: 이메일
+  location: 위치
+  links: 링크
+  education: 학력
+  experience: 경력
+  research_interests: 연구 분야
+  publications: 논문
+  publications_note: "전체 논문 목록은 <a href=\"__URL__\">논문</a> 페이지에 있습니다."
+  projects: 산학 프로젝트
+  awards: 수상
+  competitions: AI 경진대회
+  fellowships: 펠로우십 및 교육 프로그램
+  certificates: 자격증
+  equal_contribution: "* 공동 제1저자"
