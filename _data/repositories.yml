@@ -1,0 +1,8 @@
+github_users:
+  - GNOEYHEAT
+
+repo_description_lines_max: 2
+
+# Add repositories to feature, e.g.
+# github_repos:
+#   - GNOEYHEAT/your-repo-name

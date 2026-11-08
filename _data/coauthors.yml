@@ -1,0 +1,6 @@
+# Link co-author names to their homepages on the publications page.
+# Key = lowercase last name; firstname = list of first-name spellings used in papers.bib
+# Example:
+# "han":
+#   - firstname: ["Sung Won"]
+#     url: https://example.com

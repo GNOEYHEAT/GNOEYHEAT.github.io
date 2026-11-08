@@ -1,0 +1,185 @@
+# RenderCV-style CV data rendered by the al_folio_cv plugin on /cv/.
+# Lecture history is intentionally NOT included in this public site.
+cv:
+  name: Taehyeong Kim (김태형)
+  label: Senior Engineer, Samsung SDS / Ph.D. in Industrial and Management Engineering
+  email: taehyeong93@korea.ac.kr
+  location: Seoul, Korea
+
+  social_networks:
+    - network: GitHub
+      username: GNOEYHEAT
+
+  sections:
+    Education:
+      - institution: Korea University, School of Industrial Management Engineering
+        location: Seoul, Korea
+        studyType: Ph.D. in Industrial and Management Engineering
+        start_date: 2019-09
+        end_date: 2025-08
+        highlights:
+          - "Thesis: Multimodal Representation Learning and System Development Based on Large-Scale Vision-Language Models for Visual Reasoning"
+          - "Advisor: Prof. Sung Won Han, Artificial Intelligence & Data Analytics Lab"
+
+      - institution: Korea University, Department of Information Statistics
+        location: Sejong, Korea
+        studyType: B.S. in Information Statistics
+        start_date: 2012-03
+        end_date: 2019-08
+
+    Experience:
+      - company: Samsung SDS
+        position: Senior Engineer
+        location: Korea
+        start_date: 2025-09
+
+      - company: Artificial Intelligence & Data Analytics Lab, Korea University
+        position: Research Student, Industrial and Management Engineering
+        location: Seoul, Korea
+        start_date: 2019-09
+        end_date: 2025-08
+
+    Academic Interests:
+      - name: Research
+        keywords:
+          - Large Vision-Language Models
+          - Multimodal Large Language Models
+          - Multimodal Reasoning
+          - Time Series Analysis
+          - Anomaly Detection
+
+    Projects:
+      - name: 기후 데이터 기반의 환경 시험 규격 설정 프로세스 개발
+        summary: (주)현대엔지비
+        start_date: 2024-09
+        end_date: 2025-02
+
+      - name: 온디바이스 경량 언어모델 기반의 스마트홈 AI 비서 개발
+        summary: 한국전자기술연구원
+        start_date: 2024-06
+        end_date: 2024-10
+
+      - name: 대규모 Multimodal AI 모델을 이용한 영상 검색 시스템
+        summary: 에스케이텔레콤 주식회사
+        start_date: 2024-05
+        end_date: 2024-10
+
+      - name: AI를 활용한 상품정보 자동 생성 알고리즘 연구
+        summary: (주)프림로즈힐파트너스
+        start_date: 2022-10
+        end_date: 2022-12
+
+      - name: 양자 기계학습 시뮬레이터
+        summary: 한국연구재단
+        start_date: 2020-07
+        end_date: 2022-02
+
+      - name: 클레임데이터를 활용한 내구열화 부품 발췌 및 미래 고장 패턴 예측 기술 개발
+        summary: (주)현대엔지비
+        start_date: 2020-05
+        end_date: 2021-08
+
+      - name: 클레임 데이터 기반 고장발생예측 기술개발
+        summary: (주)현대엔지비
+        start_date: 2019-08
+        end_date: 2020-02
+
+      - name: 감염성질환 데이터의 CDM 확장모델 개발 및 활용을 위한 Tool 개발
+        summary: 한국보건산업진흥원
+        start_date: 2019-04
+        end_date: 2021-12
+
+      - name: 천리안 위성영상 기반 구름이동벡터 생산 알고리즘 구축 용역
+        summary: 한국에너지기술연구원
+        start_date: 2019-04
+        end_date: 2019-07
+
+    Patents:
+      - bullet: "시각-언어모델 기반 영상 의미 분할 및 요약 정보 저장 방법 및 장치 (KR Application No. 10-2025-0065303)"
+      - bullet: "의학용어 오탈자 수정 장치 및 방법 (KR Registration No. 10-2757569)"
+      - bullet: "위변조 이미지 판정 모델의 학습 방법 및 그 장치 (KR Registration No. 10-2744049)"
+      - bullet: "노이즈 부가를 이용한 위변조 이미지 판정 방법 및 그 장치 (KR Registration No. 10-2592718)"
+      - bullet: "온톨로지 데이터베이스 기반의 룰 기반 알고리즘을 이용한 세균배양검사결과보고서 정제 시스템 (KR Registration No. 10-2512095)"
+
+    Honors and Awards:
+      - title: 2025 전력사용량 예측 AI 경진대회, 3rd place
+        awarder: 한국에너지공단
+        date: 2025-09
+      - title: "2025 Bias-A-Thon: Bias 대응 챌린지 (Track 2), 최우수상"
+        awarder: 성균관대학교
+        date: 2025-06
+      - title: "건설공사 사고 예방 및 대응책 생성: 한솔데코 시즌3 AI 경진대회, 1st place"
+        awarder: 한솔데코
+        date: 2025-04
+      - title: FSI AIxData Challenge 2024, KB국민은행장상
+        awarder: 금융보안원
+        date: 2024-11
+      - title: 한국전자기술연구원 AI 융합·응용기술 아이디어 경진대회, 장려상
+        awarder: 한국전자기술연구원
+        date: 2024-10
+      - title: 웹 기사 추천 AI 경진대회, 4th place
+        awarder: 데이콘
+        date: 2024-07
+      - title: 웹 광고 클릭률 예측 AI 경진대회, 5th place
+        awarder: 데이콘
+        date: 2024-06
+      - title: 코드 유사성 판단 시즌2 AI 경진대회, 1st place
+        awarder: 데이콘
+        date: 2024-04
+      - title: 반도체 소자 이상 탐지 AI 경진대회, 1st place
+        awarder: 데이콘
+        date: 2024-03
+      - title: HD현대 AI Challenge, 우수상
+        awarder: HD한국조선해양 AI Center
+        date: 2023-11
+      - title: AI vs Human 텍스트 판별 해커톤, 1st place
+        awarder: 데이콘
+        date: 2023-11
+      - title: "2023 Samsung AI Challenge: Camera-Invariant Domain Adaptation, 장려상"
+        awarder: 삼성전자 SAIT
+        date: 2023-10
+      - title: 이미지 기반 질의 응답 AI 경진대회, 3rd place
+        awarder: 데이콘
+        date: 2023-08
+      - title: 법원 판결 예측 AI 경진대회, 4th place
+        awarder: 데이콘
+        date: 2023-07
+      - title: 음향 데이터 COVID-19 검출 AI 경진대회, 3rd place
+        awarder: 데이콘
+        date: 2022-07
+      - title: 2021년 산업제어시스템 보안위협 탐지 AI 경진대회 (HAICon 2021), 입선
+        awarder: 국가정보원, 국가보안기술연구소
+        date: 2021-11
+      - title: SAS 논문경진대회, 우수 논문상
+        awarder: 한국쌔스소프트웨어(유), 한국데이터마이닝학회
+        date: 2020-11
+      - title: FactoryHack Korea 2020, 대상
+        awarder: 산업통상자원부, 한국전자부품연구원(KETI)
+        date: 2020-01
+      - title: KU-AI 4.0 바이오 의료 빅데이터 분석 및 활용 과정, 최우수상
+        awarder: 고용노동부, 고려대학교 대학교육개발원
+        date: 2018-11
+
+    AI Competitions:
+      - bullet: "DACON Competition **Champion** tier: 수상 15회, 상위 1% 6회, 상위 4% 14회, 상위 10% 7회"
+
+    Fellowships and Programs:
+      - bullet: "SKT AI Fellowship 6기, SK텔레콤 (May 2024 – Oct. 2024)"
+      - bullet: "LG Aimers / Data Intelligence 3기, LG AI연구원 (Jul. 2023 – Aug. 2023)"
+      - bullet: "LG Aimers / Data Intelligence 1기, LG AI연구원 (Jul. 2022 – Aug. 2022)"
+      - bullet: "4단계 BK21 빅데이터 애널리틱스 기반 문제 정의형 인재 양성, 교육부 (from Sep. 2020)"
+      - bullet: "산업인공지능 전문인력 양성, 한국산업기술진흥원 (Sep. 2019 – Mar. 2020)"
+
+    Certificates:
+      - name: AICE Associate
+        date: 2022-11
+      - name: AICE Basic
+        date: 2022-11
+      - name: 빅데이터 분석기사
+        date: 2021-07
+      - name: 데이터분석 준전문가 (ADsP)
+        date: 2018-12
+      - name: 정보처리기사
+        date: 2018-11
+      - name: 사회조사분석사 2급
+        date: 2017-08

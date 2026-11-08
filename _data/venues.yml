@@ -1,0 +1,13 @@
+# Badge colors for the `abbr` field in _bibliography/papers.bib
+"KBS":
+  color: "#2f5d8a"
+"IEEE Access":
+  color: "#00629b"
+"Mathematics":
+  color: "#4f6d3a"
+"EFA":
+  color: "#7a4b2a"
+"JMIR MI":
+  color: "#5b4a8a"
+"AsiaSim":
+  color: "#8a3b4b"
