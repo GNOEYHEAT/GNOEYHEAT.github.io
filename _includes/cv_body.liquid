@@ -47,10 +47,6 @@
     <div class="cv-what"><a href="mailto:{{ cv.contact.email }}">{{ cv.contact.email }}</a></div>
   </li>
   <li>
-    <div class="cv-when">{{ t.location }}</div>
-    <div class="cv-what">{{ cv.contact.location | loc: lang }}</div>
-  </li>
-  <li>
     <div class="cv-when">{{ t.links }}</div>
     <div class="cv-what">
       <a href="https://github.com/{{ cv.contact.github }}">GitHub</a> ·
@@ -67,7 +63,7 @@
       <div class="cv-when">{{ e.start | cv_period: e.end, lang }}</div>
       <div class="cv-what">
         <b>{{ e.degree | loc: lang }}</b><br>
-        <span class="cv-sub">{{ e.school | loc: lang }}, {{ e.department | loc: lang }} · {{ e.location | loc: lang }}</span>
+        <span class="cv-sub">{{ e.school | loc: lang }}{% if lang == 'ko' %} {% else %}, {% endif %}{{ e.department | loc: lang }}</span>
         {% if e.details %}
           <ul>
             {% for d in e.details %}<li>{{ d | loc: lang }}</li>{% endfor %}
@@ -85,7 +81,7 @@
       <div class="cv-when">{{ e.start | cv_period: e.end, lang }}</div>
       <div class="cv-what">
         <b>{{ e.position | loc: lang }}</b><br>
-        <span class="cv-sub">{{ e.organization | loc: lang }} · {{ e.location | loc: lang }}</span>
+        <span class="cv-sub">{{ e.organization | loc: lang }}</span>
       </div>
     </li>
   {% endfor %}

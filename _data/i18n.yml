@@ -16,7 +16,6 @@ en:
   pdf_ko: Korean
   contact: Contact
   email: Email
-  location: Location
   links: Links
   education: Education
   experience: Experience
@@ -45,7 +44,6 @@ ko:
   pdf_ko: 국문
   contact: 연락처
   email: 이메일
-  location: 위치
   links: 링크
   education: 학력
   experience: 경력

@@ -26,7 +26,6 @@ self_names: [김태형, Taehyeong Kim, Tae-Hyeong Kim]
 
 contact:
   email: taehyeong93@korea.ac.kr
-  location: { en: "Seoul, Korea", ko: 대한민국 서울 }
   website: gnoeyheat.github.io
   github: GNOEYHEAT
   linkedin: gnoeyheat
@@ -37,7 +36,6 @@ education:
   - school: { en: Korea University, ko: 고려대학교 }
     department: { en: School of Industrial Management Engineering, ko: 산업경영공학과 }
     degree: { en: Ph.D. in Industrial and Management Engineering, ko: 공학박사 (산업경영공학) }
-    location: { en: "Seoul, Korea", ko: 서울 }
     start: "2019-09"
     end: "2025-08"
     details:
@@ -49,7 +47,6 @@ education:
   - school: { en: Korea University, ko: 고려대학교 }
     department: { en: Department of Information Statistics, ko: 정보통계학과 }
     degree: { en: B.S. in Information Statistics, ko: 이학사 (정보통계학) }
-    location: { en: "Sejong, Korea", ko: 세종 }
     start: "2012-03"
     end: "2019-08"
 
@@ -57,13 +54,11 @@ education:
 experience:
   - organization: { en: Samsung SDS, ko: 삼성SDS }
     position: Senior Engineer
-    location: { en: Korea, ko: 대한민국 }
     start: "2025-09"
     end: present
 
   - organization: { en: "Artificial Intelligence & Data Analytics Lab, Korea University", ko: "고려대학교 Artificial Intelligence & Data Analytics Lab" }
     position: { en: "Research Student, Industrial and Management Engineering", ko: "연구원 (산업경영공학과 대학원)" }
-    location: { en: "Seoul, Korea", ko: 서울 }
     start: "2019-09"
     end: "2025-08"
 

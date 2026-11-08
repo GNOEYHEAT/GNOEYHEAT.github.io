@@ -77,7 +77,7 @@
 // ---------------------------------------------------------------- sections
 #section(t.education)
 #for e in cv.education {
-  row([*#loc(e.degree)* \ #sub(loc(e.school) + ", " + loc(e.department) + " · " + loc(e.location))], period(
+  row([*#loc(e.degree)* \ #sub(loc(e.school) + (if lang == "ko" { " " } else { ", " }) + loc(e.department))], period(
     e.start,
     e.at("end", default: none),
   ))
@@ -89,7 +89,7 @@
 
 #section(t.experience)
 #for e in cv.experience {
-  row([*#loc(e.position)* \ #sub(loc(e.organization) + " · " + loc(e.location))], period(
+  row([*#loc(e.position)* \ #sub(loc(e.organization))], period(
     e.start,
     e.at("end", default: none),
   ))

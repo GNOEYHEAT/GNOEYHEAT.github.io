@@ -13,8 +13,6 @@ profile:
   align: right
   image: prof_pic.jpg
   image_circular: false
-  more_info: >
-    <p>Seoul, Korea</p>
 
 selected_papers: true # lists entries marked selected={true} in _bibliography/papers.bib
 social: true # social icons from _data/socials.yml
